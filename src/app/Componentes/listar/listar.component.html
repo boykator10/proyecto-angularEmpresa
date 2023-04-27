@@ -1,0 +1,40 @@
+<div class="container">
+    <div class="card">
+      <div class="card-header">
+        <h2>Listado De Empresas</h2>
+      </div>
+      <div class="card-body">
+        <table class="table table-hover">
+          <thead>
+            <tr>
+              <th>Empresa Id</th>
+              <th>Nombre</th>
+              <th>Telefono</th>
+              <th>Precio </th>
+
+              <th>Editar</th>
+              <th>Eliminar</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let e of empresa">
+              <td>{{e.idEmpresa}}</td>
+              <td>{{e.nombre}}</td>
+              <td>{{e.telefono}}</td>
+              <td>{{e.precio | currency: '$'}}</td>
+
+              <td><button  class="btn btn-outline-warning" (click)="editar(e)">Editar</button></td>
+              <td><button class="btn btn-outline-danger" (click)="eliminar(e)">Eliminar</button></td>
+
+
+            </tr>
+          </tbody>
+
+        </table>
+
+      </div>
+
+    </div>
+
+  </div>
+
